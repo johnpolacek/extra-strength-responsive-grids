@@ -10,36 +10,39 @@
   <meta name="description" content="The Cure for Rigid Grid Syndrome">
   <meta name="viewport" content="width=device-width">
 
-  <link href='http://fonts.googleapis.com/css?family=Alfa+Slab+One' rel='stylesheet' type='text/css'>
+  <link href='http://fonts.googleapis.com/css?family=Alfa+Slab+One|PT+Sans:400,700,400italic,700italic' rel='stylesheet' type='text/css'>
   <link href="css/grid.css" rel="stylesheet" />
   <link href="css/main.css" rel="stylesheet" />
-
-
-  <script src="js/vendor/modernizr-2.6.2-respond-1.1.0.min.js"></script>
+  <!--[if lt IE 9]>
+      <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+      <script>window.html5 || document.write('<script src="js/vendor/html5shiv.js"><\/script>')</script>
+  <![endif]-->
 </head>
 <body>
 
 <div class="page-wrap">
-  <header class="grid-whole padded">
+  <header class="grid-whole padded header-top">
     <div class="grid-demo grid-whole">
-      <div class="grid-1 padded-sides"><div class="content-box"></div></div>
-      <div class="grid-1 padded-sides"><div class="content-box"></div></div>
-      <div class="grid-1 padded-sides"><div class="content-box"></div></div>
-      <div class="grid-1 padded-sides"><div class="content-box"></div></div>
-      <div class="grid-1 padded-sides"><div class="content-box"></div></div>
-      <div class="grid-1 padded-sides"><div class="content-box"></div></div>
-      <div class="grid-1 padded-sides"><div class="content-box"></div></div>
-      <div class="grid-1 padded-sides"><div class="content-box"></div></div>
-      <div class="grid-1 padded-sides"><div class="content-box"></div></div>
-      <div class="grid-1 padded-sides"><div class="content-box"></div></div>
-      <div class="grid-1 padded-sides"><div class="content-box"></div></div>
-      <div class="grid-1 padded-sides"><div class="content-box"></div></div>
+      <div class="grid-1 s-grid-2 padded-sides"><div class="content-inner content-box"></div></div>
+      <div class="grid-1 s-grid-2 padded-sides"><div class="content-inner content-box"></div></div>
+      <div class="grid-1 s-grid-2 padded-sides"><div class="content-inner content-box"></div></div>
+      <div class="grid-1 s-grid-2 padded-sides"><div class="content-inner content-box"></div></div>
+      <div class="grid-1 s-grid-2 padded-sides"><div class="content-inner content-box"></div></div>
+      <div class="grid-1 s-grid-2 padded-sides"><div class="content-inner content-box"></div></div>
+      <div class="grid-1 s-hidden padded-sides"><div class="content-inner content-box"></div></div>
+      <div class="grid-1 s-hidden padded-sides"><div class="content-inner content-box"></div></div>
+      <div class="grid-1 s-hidden padded-sides"><div class="content-inner content-box"></div></div>
+      <div class="grid-1 s-hidden padded-sides"><div class="content-inner content-box"></div></div>
+      <div class="grid-1 s-hidden padded-sides"><div class="content-inner content-box"></div></div>
+      <div class="grid-1 s-hidden padded-sides"><div class="content-inner content-box"></div></div>
     </div>
     <div class="grid-3 padded">
-      <img class="hero-img" src="img/box.png" />
+      <div class="hero-img-contain">
+        <img class="hero-img" src="img/box.png" />
+      </div>
     </div>
-    <div class="grid-9 padded">
-      <h1>Extra Strength Responsive Grids</h1>
+    <div class="grid-12 l-grid-9 padded">
+      <h1>Extra Strength Responsive&nbsp;Grids</h1>
       <h2>The Cure for Rigid Grid Syndrome</h2>
     </div>
   </header>
@@ -48,23 +51,22 @@
     
     <div class="grid-12 padded">
       <div class="l-grid-8 padded">
-        <div class="content-box">
-          <p>Do you suffer from rigid grid syndrome? Do you wish your grids were a little more pliant? The key active ingredient in Extra Strength Responsive Grids is MQ (a.k.a media queries). Apply MQ to your grids today!</p>
-          <p>Have you tried responsive grids before? Did you run into issues where your ‘responsive’ grids weren’t responsive enough Are you frustrated when collapsing your grid into a single column seems to be your only option for small screens? And what about those pesky phablets?!</p>
-          
+        <div class="content-inner">
+          <p><strong>Do you suffer from rigid grid syndrome?</strong> Do you wish your grids were a little more pliant? The key active ingredient in Extra Strength Responsive Grids is <em><strong>MQ</strong> (a.k.a media queries)</em>. Apply <em><strong>MQ</strong></em> to your grids today!</p>
+          <p>Have you tried responsive grids before? Did you run into issues where your <em>‘responsive’</em> grids weren’t responsive enough Are you frustrated when collapsing your grid into a single column seems to be your only option for small screens? And what about those <em>pesky phablets?!</em></p> 
         </div>
       </div>
 
       <aside class="l-grid-4 padded">
-        <div class="content-box">
-          <p>Extra Strength Responsive Grids</p>
-          <ul>
-            <li>Percentage-based</li>
-            <li>Media Queries</li>
-            <li>Easy Alignment</li>
-            <li>Nested Grids</li>
-            <li>Easy-To-Remember Classes</li>
-            <li>Legacy Browser Support</li>
+        <div class="content-inner content-box content-box-secondary">
+          <h2>Extra Strength Responsive Grids</h2>
+          <ul class="clearfix">
+            <li class="m-grid-half">Percentage-based</li>
+            <li class="m-grid-half">Media Queries</li>
+            <li class="m-grid-half">Easy Alignment</li>
+            <li class="m-grid-half">Nested Grids</li>
+            <li class="m-grid-half">Easy-To-Remember Classes</li>
+            <li class="m-grid-half">Legacy Browser Support</li>
           </ul>
         </div>
       </aside>
@@ -72,49 +74,61 @@
 
     <div class="grid-12 padded">
         <div class="grid-whole padded">
-          <h3>With Extra Strength Responsive Grids, you can take total control of your layouts.</h3>
+          <div class="content-inner">
+            <h3><em>With Extra Strength Responsive Grids, you can take total control of your layouts.</em></h3>
+          </div>
+        </div>
+        <div class="grid-third s-grid-whole padded">
+          <div class="content-inner content-box">You can do the normal columns</div>
+        </div>
+        <div class="grid-third s-grid-whole padded">
+          <div class="content-inner content-box">that collapse to stacked</div>
+        </div>
+        <div class="grid-third s-grid-whole padded">
+          <div class="content-inner content-box">when you are on a small screen...</div>
         </div>
         <div class="grid-quarter m-grid-half s-grid-whole padded">
-          <div class="content-box">Want to try four columns on large...</div>
+          <div class="content-inner content-box">How about four columns on large...</div>
         </div>
         <div class="grid-quarter m-grid-half s-grid-whole padded">
-          <div class="content-box">two columns on medium (phablet!)...</div>
+          <div class="content-inner content-box">two columns on medium (phablet!)...</div>
         </div>
         <div class="grid-quarter m-grid-half s-grid-whole padded">
-          <div class="content-box">and stacked on small...</div>
+          <div class="content-inner content-box">and stacked on small...</div>
         </div>
         <div class="grid-quarter m-grid-half s-grid-whole padded">
-          <div class="content-box">Not a problem!</div>
+          <div class="content-inner content-box">Not a problem!</div>
         </div>
     </div>
 
     <div class="grid-12 padded">
       <div class="grid-whole padded-sides">
-        <div class="content-box">
-          <h4>How about a content group with a header block</h4>
+        <div class="content-inner content-box content-box-header">
+          <h3>Or take for example a content group with a header block...</h3>
         </div>
       </div>
       <div class="l-grid-9 padded-sides l-flow-opposite">
-        <p>and a main content area that goes to the right on large screens, but stacks on top of the sidebar on medium &amp; small (via the <code>.flow-opposite</code> class - thanks <a href="https://github.com/davatron5000/Foldy960">foldy</a>)</p>
-        <h3>Go for it!</h3>
-        <p><small><em>(resize your browser to see it in action)</em></small></p>
+        <div class="content-inner">
+          <p>and a main content area that goes to the right on large screens, but stacks on top of the sidebar on medium &amp; small (via the <code>.flow-opposite</code> class - thanks <a href="https://github.com/davatron5000/Foldy960">foldy</a>)</p>
+          <h3>Go for it! <small><em>(resize your browser to see it in action)</em></small></h3>
+        </div>
       </div>
       <div class="l-grid-3 padded">
-        <div class="content-box clearfix">
+        <div class="content-inner content-box clearfix">
           <div class="m-grid-whole m-padded-sides">
             <p>and a sidebar area</p>
           </div>
           <div class="m-grid-quarter m-padded-sides">
-            <div class="callout-box">with callout boxes</div>
+            <div class="content-inner content-box content-box-inner">with inner boxes</div>
           </div>
           <div class="m-grid-quarter m-padded-sides">
-            <div class="callout-box">that stack on large screens,</div>
+            <div class="content-inner content-box content-box-inner">that stack on large screens,</div>
           </div>
           <div class="m-grid-quarter m-padded-sides">
-            <div class="callout-box">are columned on medium,</div>
+            <div class="content-inner content-box content-box-inner">are columned on medium,</div>
           </div>
           <div class="m-grid-quarter m-padded-sides">
-            <div class="callout-box">then go back to stacked on small?</div>
+            <div class="content-inner content-box content-box-inner">then go back to stacked on small?</div>
           </div>
         </div>
       </div>
@@ -122,44 +136,63 @@
     </div>
 
     <div class="grid-12 padded">
-      <p>Do class names like <code>.grid-6</code> and <code>.grid-4</code> confuse you? Instead, try our simple to understand and easy to remember classes like <code>.grid-half</code> and <code>.grid-third</code>.</p>
+      <div class="content-inner">
+        <p><strong>Do class names like <code>.grid-6</code> and <code>.grid-4</code> confuse you?</strong> Instead, try our simple to understand and easy to remember classes like <code>.grid-half</code> and <code>.grid-third</code>.</p>
+      </div>
+    </div>
+
+    <div class="grid-12 padded-sides">
+      <div class="grid-whole padded"><div class="content-inner content-box center">.grid-12 = .grid-whole</div></div>
+      <div class="grid-half padded"><div class="content-inner content-box center">.grid-6</div></div>
+      <div class="grid-half padded"><div class="content-inner content-box center">.grid-half</div></div>
+      <div class="grid-third padded"><div class="content-inner content-box center">.grid-4</div></div>
+      <div class="grid-third padded"><div class="content-inner content-box center">.grid-third</div></div>
+      <div class="grid-third padded"><div class="content-inner content-box center">.grid-third</div></div>
+      <div class="grid-quarter padded"><div class="content-inner content-box center">.grid-3</div></div>
+      <div class="grid-quarter padded"><div class="content-inner content-box center">.grid-quarter</div></div>
+      <div class="grid-quarter padded"><div class="content-inner content-box center">.grid-quarter</div></div>
+      <div class="grid-quarter padded"><div class="content-inner content-box center">.grid-quarter</div></div>
     </div>
 
     <div class="grid-12 padded">
-      <div class="grid-whole padded"><div class="content-box center">.grid-12 = .grid-whole</div></div>
-      <div class="grid-half padded"><div class="content-box center">.grid-6</div></div>
-      <div class="grid-half padded"><div class="content-box center">.grid-half</div></div>
-      <div class="grid-third padded"><div class="content-box center">.grid-4</div></div>
-      <div class="grid-third padded"><div class="content-box center">.grid-third</div></div>
-      <div class="grid-third padded"><div class="content-box center">.grid-third</div></div>
-      <div class="grid-quarter padded"><div class="content-box center">.grid-3</div></div>
-      <div class="grid-quarter padded"><div class="content-box center">.grid-quarter</div></div>
-      <div class="grid-quarter padded"><div class="content-box center">.grid-quarter</div></div>
-      <div class="grid-quarter padded"><div class="content-box center">.grid-quarter</div></div>
+      <div class="content-inner">
+        <p><strong>Do your grids suffer from alignment issues?</strong> Extra Strength Responsive Grids comes with padding classes so you can make sure all your boxes line up just right!</p>
+      </div>
+    </div>
+    <div class="grid-12 padded">
+      <div class="content-inner">
+        <p><strong>Try the Extra Strength Responsive Grids method today!</strong> Let your grid classes control the layout structure of your web pages. Then let all your content classes (those widgets, callouts, boxes, content blocks, sidebars, etc.) fill up the space inside of their grid containers.</p>
+      </div>
+    </div>
+    <div class="grid-12 padded">
+      <div class="content-inner">
+        <p><strong>Does CSS3 animation get your motor going?</strong> Just add the <code>.grid-animate</code> class to your <code>&lt;body&gt;</code> tag and the grid will animate its transitions.</p>
+      </div>
+    </div>
+    <div class="grid-12 padded">
+      <div class="content-inner">
+        <p><strong>Do you like to nest your grids?</strong> With Extra Strength Responsive Grids, you can nest grids inside of grids that are nested within nested grids. Get crazy with it! Go bonkers! Fly your grid freak flag high!</p>
+        <p>Example here...</p>
+      </div>
+    </div>
+    <div class="grid-12 padded">
+      <div class="content-inner">
+        <p><strong>Bonus Offer!</strong> Extra Strength Responsive Grids comes with a free copy of Equalize! Equalize the heights of your grids by adding the <code>.equalize</code> class to the grid container.</p>
+        <p>Example here...</p>
+        <p>Before Equalize</p>
+        <p>After Equalize</p>
+      </div>
     </div>
 
     <div class="grid-12 padded">
-      <p>Do your grids suffer from alignment issues. Extra Strength Responsive Grids comes with padding classes so you can make sure all your boxes line up just right!</p>
+      <div class="content-inner warning">
+        <p><strong>Side Effects:</strong> The use of Extra Strength Responsive Grids may result in excessive container elements. <strong class="strong-very">If you are a developer who experiences adverse reactions to non-semantic container div classes, it is recommended that you avoid Extra Strength Responsive Grids</strong>. Using in combination with horizontal margins may lead to side effects such as broken layouts and element collision. May cause headaches due to ‘grid inception’.</p>
+      </div>
     </div>
     <div class="grid-12 padded">
-      <p>Widgets, callouts, boxes, content blocks, sidebars... throw all your content into grid containers, and let them fill up the space.</p>
-    </div>
-    <div class="grid-12 padded">
-      <p>Do you like to nest your grids? With Extra Strength Responsive Grids, you can nest grids inside of grids that are nested within nested grids. Get crazy with it! Go bonkers! Fly your grid freak flag high!</p>
-      <p>Example here...</p>
-    </div>
-    <div class="grid-12 padded">
-      <p><strong>Bonus Offer!</strong> Extra Strength Responsive Grids comes with a free copy of Equalize! Equalize the heights of your grids by adding the <code>.equalize</code> class to the grid container.</p>
-      <p>Example here...</p>
-      <p>Before Equalize</p>
-      <p>After Equalize</p>
-    </div>
-
-    <div class="grid-12 padded">
-      <p><strong>Side Effects:</strong> The use of Extra Strength Responsive Grids may result in excessive container elements. Using in combination with horizontal margins may lead to side effects such as broken layouts and element collision. May cause headaches due to ‘grid inception’.</p>
-    </div>
-    <div class="grid-12 padded">
-      <p><strong>About border-box and IE:</strong> The use of Extra Strength Responsive Grids requires the use of <code>box-sizing:border-box;</code>, which is unsupported natively in IE7. However, the good news is there is a <code>boxsizing.htc</code> file that can enable border-box for oldIE browsers. Caution: The use of this .htc file may cause lag, especially when border-box is applied with a wildcard (*). It is recommended to only use <code>box-sizing:border-box;</code> on the grid containers, and not on the content within (as it is on the page you are lookin’ at right now).</p>
+      <div class="content-inner warning">
+        <p><strong>About border-box and IE:</strong> The use of Extra Strength Responsive Grids requires the use of <code>box-sizing:border-box;</code>, which is unsupported natively in IE7. However, the good news is there is a <code>boxsizing.htc</code> file that can enable border-box for oldIE browsers. Caution: The use of this .htc file may cause lag, especially when border-box is applied with a wildcard (*). It is recommended to only use <code>box-sizing:border-box;</code> on the grid containers, and not on the content within (as it is on the page you are lookin’ at right now).</p>
+      </div>
     </div>
   </section><!-- /#main -->
 
@@ -173,13 +206,11 @@
 <script src="//ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>
 <script>window.jQuery || document.write('<script src="js/vendor/jquery-1.8.3.min.js"><\/script>')</script>
 
-<script src="js/min/scripts.min.js" type="text/javascript"></script>
-
 
 <!-- Add your own Google Analytics UA number or remove this snippet -->
 <script>
   // http://stackoverflow.com/questions/1264630/google-analytics-multiple-trackers-for-several-accounts#answer-12498571
-  var codes = ['UA-34991331-3', 'UA-34145020-1'], // tim, dfcb
+  var codes = ['UA-34145020-1'], // tim, dfcb
       _gaq = _gaq || [];
 
   for(i in codes) {
