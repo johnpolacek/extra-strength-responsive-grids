@@ -12,7 +12,6 @@ input[type=reset],input[type=submit]{-webkit-appearance:button;cursor:pointer;ov
 
 body { font-family: 'PT Sans', sans-serif; }
 h1,h2,h3,h4,h5,h6 {
-	margin: 0;
 	line-height: 1.2;
 }
 h1 {
@@ -27,6 +26,13 @@ ul { margin: .5em 0; padding: 0 0 0 1.5em; }
 li { padding-right: 1em; }
 small { font-weight: normal; font-size: .75em; }
 
+.header-example h1, 
+.header-example h2, 
+.header-example h3, 
+.header-example h4, 
+.header-example p {
+	margin-bottom: 0;
+}
 .page-wrap {
 	max-width: 960px;
 	margin: 0 auto;
@@ -35,7 +41,7 @@ small { font-weight: normal; font-size: .75em; }
 .grid-demo {
 	width: 98%;
 	height: 4.8em;
-	margin: 1% 1% 0;
+	margin: .5em .5em 0;
 }
 .grid-demo .grid-1 {
 	height: 4.8em;
@@ -49,18 +55,16 @@ small { font-weight: normal; font-size: .75em; }
 }
 
 .header-top h1 {
-	margin-top: .4em;
+	margin: .4em 0 0;
 	font-size: 2.2em;
 }
 .header-top h2 {
+	margin: 0;
 	color: #a82121;
 	text-transform: uppercase;
 	font-style: italic;
 	font-weight: normal;
 	font-size: 1.1em;
-}
-.header-top h1, .header-top h2 {
-	padding-left: 1%;
 }
 .hero-img-contain {
 	position: relative;
@@ -68,22 +72,16 @@ small { font-weight: normal; font-size: .75em; }
 }
 .hero-img {
 	position: absolute;
-	top: -3em; left: 2em;
+	top: -3em; left: 14%;
 	width: 88%;
 	min-width: 10em;
 }
-.content-inner {
-	padding: 0 1em;
-	overflow: hidden;
-}
 .content-box {
-	padding: 1em;
 	background: #d9e8ff;
 }
 .content-box-header {
 	background: #4e7bc5;
 	color: #fff;
-	padding: 1em;
 }
 .content-box-secondary {
 	background: #4e7bc5;
@@ -91,8 +89,7 @@ small { font-weight: normal; font-size: .75em; }
 }
 .content-box-inner {
 	background: #c4d8f6;
-	padding: .5em;
-	margin-bottom: .25em;
+	margin-bottom: .5em;
 }
 .content-box p {
 	margin: 0 0 1em;
@@ -106,9 +103,36 @@ small { font-weight: normal; font-size: .75em; }
 .strong-very {
 	color: #a82121;
 }
-
+.padding-demo {
+	border: dashed 1px #c4d8f6;
+	color: #4e7bc5;
+}
+.padding-demo-last {
+	border-left: none;
+}
+.padding-demo p {
+	margin: 0 0 .5em;
+	opacity: .8;
+	border-left: dashed 1px #4e7bc5;
+}
+.padding-demo .content-box p { 
+	border: dashed 1px #4e7bc5; 
+}
 
 #resize {
-  position: fixed;
-  bottom: 0; right: 0;
+	position: fixed;
+	bottom: 0; right: 0;
+}
+.loud {
+	text-transform: uppercase;
+}
+
+@media (max-width: 800px) {
+	.header-top h1, .header-top h2 { padding-left: 16px;}
+}
+
+/* Small */
+@media (max-width: 480px) {
+	.header-top h1 { font-size: 1.6em;}
+	.header-top h2 { font-size: .8em;}
 }
