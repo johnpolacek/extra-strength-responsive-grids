@@ -74,6 +74,7 @@ a, a:visited {
 	font-weight: normal;
 	font-size: 1.1em;
 }
+.header-top p { margin: -.25em 0; opacity: .8; }
 .hero-img-contain {
 	position: relative;
 	height: 4em;
@@ -137,10 +138,14 @@ a, a:visited {
 }
 .content-box-cta {
 	background: #a82121;
-	margin-top: 1em;
+	color: #fff;
 }
-.content-box-cta h3 {
-	text-transform: uppercase;
+.content-box-cta a, .content-box-cta a:visited {
+	color: #fff;
+	font-weight: bold;
+}
+.content-box-cta p {
+	margin: 0 0 1em;
 }
 .citations {
 	border-top: dashed 1px #4e7bc5;
