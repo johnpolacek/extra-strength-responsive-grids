@@ -61,7 +61,6 @@ a, a:visited {
 	border-left: dashed 1px #c4d8f6;
 	border-right: dashed 1px #c4d8f6;
 }
-
 .header-top h1 {
 	margin: .4em 0 0;
 	font-size: 2.2em;
@@ -84,6 +83,12 @@ a, a:visited {
 	top: -3em; left: 14%;
 	width: 88%;
 	min-width: 10em;
+}
+.content-download {
+	margin-bottom: 2em;
+}
+.content-download p {
+	margin: .25em;
 }
 .content-box {
 	background: #d9e8ff;
@@ -131,7 +136,35 @@ a, a:visited {
 .content-box-transparent {
 	background: rgba(78,123,197,.2);	
 }
-
+.btn-big {
+	-moz-box-shadow:inset 0px 1px 0px 0px #ffffff;
+	-webkit-box-shadow:inset 0px 1px 0px 0px #ffffff;
+	box-shadow:inset 0px 1px 0px 0px #ffffff;
+	background:-webkit-gradient( linear, left top, left bottom, color-stop(0.05, #d9e8ff), color-stop(1, #c4d8f6) );
+	background:-moz-linear-gradient( center top, #d9e8ff 5%, #c4d8f6 100% );
+	filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#d9e8ff', endColorstr='#c4d8f6');
+	background-color:#d9e8ff;
+	-moz-border-radius:6px;
+	-webkit-border-radius:6px;
+	border-radius:6px;
+	border:1px solid #c4d8f6;
+	display:inline-block;
+	color:#4e7cc5;
+	font-size:2em;
+	font-style: normal;
+	font-family: 'Alfa Slab One', cursive;
+	padding:6px 24px;
+	text-decoration:none;
+	text-shadow:1px 1px 0px #ffffff;
+}.btn-big:hover {
+	background:-webkit-gradient( linear, left top, left bottom, color-stop(0.05, #c4d8f6), color-stop(1, #d9e8ff) );
+	background:-moz-linear-gradient( center top, #c4d8f6 5%, #d9e8ff 100% );
+	filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#c4d8f6', endColorstr='#d9e8ff');
+	background-color:#c4d8f6;
+}.btn-big:active {
+	position:relative;
+	top:1px;
+}
 #resize {
 	position: fixed;
 	bottom: 0; right: 0;
@@ -156,11 +189,12 @@ a, a:visited {
 }
 
 @media (max-width: 800px) {
-	.header-top h1, .header-top h2 { padding-left: 16px;}
+	.header-top h1, .header-top h2, .header-top p { padding-left: 16px;}
 }
 
 /* Small */
 @media (max-width: 480px) {
 	.header-top h1 { font-size: 1.6em;}
 	.header-top h2 { font-size: .8em;}
+	.btn-big { font-size: 1.2em; }
 }
