@@ -76,11 +76,13 @@ $breakpoint_prefixes: s-,m-,l-;
 
   /* miscellaneous helper classes */
   .#{$_prefix}flow-opposite { float: right; }
+
+  .#{$_prefix}center { text-align:center; }
+  .#{$_prefix}left { text-align:left; }
+  .#{$_prefix}right { text-align:right; }
+  
   @if ($_prefix != '') {
     .#{$_prefix}hidden { display: none; }
-    .#{$_prefix}center { text-align:center; }
-    .#{$_prefix}left { text-align:left; }
-    .#{$_prefix}right { text-align:right; }
   }
 }
 

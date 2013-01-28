@@ -112,6 +112,18 @@
   float: right;
 }
 
+.center {
+  text-align: center;
+}
+
+.left {
+  text-align: left;
+}
+
+.right {
+  text-align: right;
+}
+
 @media (max-width: 480px) {
   .s-grid-all, .s-grid-1, .s-grid-2, .s-grid-3, .s-grid-quarter, .s-grid-4, .s-grid-third, .s-grid-5, .s-grid-6, .s-grid-half, .s-grid-7, .s-grid-8, .s-grid-two-thirds, .s-grid-9, .s-grid-three-quarters, .s-grid-10, .s-grid-11, .s-grid-12, .s-grid-whole {
     margin: 0;
@@ -213,10 +225,6 @@
     float: right;
   }
 
-  .s-hidden {
-    display: none;
-  }
-
   .s-center {
     text-align: center;
   }
@@ -227,6 +235,10 @@
 
   .s-right {
     text-align: right;
+  }
+
+  .s-hidden {
+    display: none;
   }
 }
 @media (min-width: 481px) and (max-width: 800px) {
@@ -330,10 +342,6 @@
     float: right;
   }
 
-  .m-hidden {
-    display: none;
-  }
-
   .m-center {
     text-align: center;
   }
@@ -344,6 +352,10 @@
 
   .m-right {
     text-align: right;
+  }
+
+  .m-hidden {
+    display: none;
   }
 }
 @media (min-width: 801px) {
@@ -447,10 +459,6 @@
     float: right;
   }
 
-  .l-hidden {
-    display: none;
-  }
-
   .l-center {
     text-align: center;
   }
@@ -461,5 +469,9 @@
 
   .l-right {
     text-align: right;
+  }
+
+  .l-hidden {
+    display: none;
   }
 }
