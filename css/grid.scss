@@ -62,7 +62,7 @@ $breakpoint_prefixes: s-,m-,l-;
     }
   }
 
-  //* generate padding classes */
+  /* padding helper classes */
   .#{$_prefix}padded { padding: $padOuter; }
   .#{$_prefix}padded-left { padding-left: $padOuter; }
   .#{$_prefix}padded-right { padding-right: $padOuter; }
@@ -74,10 +74,13 @@ $breakpoint_prefixes: s-,m-,l-;
   .#{$_prefix}padded-inner { padding: $padInner; }
   .#{$_prefix}padded-inner-sides { padding: 0 $padInner; }
 
-  //* generate helper classes */
+  /* miscellaneous helper classes */
   .#{$_prefix}flow-opposite { float: right; }
   @if ($_prefix != '') {
     .#{$_prefix}hidden { display: none; }
+    .#{$_prefix}center { text-align:center; }
+    .#{$_prefix}left { text-align:left; }
+    .#{$_prefix}right { text-align:right; }
   }
 }
 
