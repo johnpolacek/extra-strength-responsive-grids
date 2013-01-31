@@ -75,6 +75,10 @@
   padding: 0.5em;
 }
 
+.padded-reverse {
+  margin: -0.5em;
+}
+
 .padded-left {
   padding-left: 0.5em;
 }
@@ -107,6 +111,14 @@
   padding: 0 1em;
 }
 
+.padded-reverse {
+  margin: 0 -0.5em;
+}
+
+.padded-reverse-all {
+  margin: -0.5em;
+}
+
 /* miscellaneous helper classes */
 .flow-opposite {
   float: right;
@@ -122,6 +134,11 @@
 
 .right {
   text-align: right;
+}
+
+/* For compatibility with Bootstrap (fixed), Foundation, etc. */
+.row {
+  margin: 0 -0.5em;
 }
 
 @media (max-width: 480px) {
@@ -188,6 +205,10 @@
     padding: 0.5em;
   }
 
+  .s-padded-reverse {
+    margin: -0.5em;
+  }
+
   .s-padded-left {
     padding-left: 0.5em;
   }
@@ -218,6 +239,14 @@
 
   .s-padded-inner-sides {
     padding: 0 1em;
+  }
+
+  .s-padded-reverse {
+    margin: 0 -0.5em;
+  }
+
+  .s-padded-reverse-all {
+    margin: -0.5em;
   }
 
   /* miscellaneous helper classes */
@@ -305,6 +334,10 @@
     padding: 0.5em;
   }
 
+  .m-padded-reverse {
+    margin: -0.5em;
+  }
+
   .m-padded-left {
     padding-left: 0.5em;
   }
@@ -335,6 +368,14 @@
 
   .m-padded-inner-sides {
     padding: 0 1em;
+  }
+
+  .m-padded-reverse {
+    margin: 0 -0.5em;
+  }
+
+  .m-padded-reverse-all {
+    margin: -0.5em;
   }
 
   /* miscellaneous helper classes */
@@ -422,6 +463,10 @@
     padding: 0.5em;
   }
 
+  .l-padded-reverse {
+    margin: -0.5em;
+  }
+
   .l-padded-left {
     padding-left: 0.5em;
   }
@@ -452,6 +497,14 @@
 
   .l-padded-inner-sides {
     padding: 0 1em;
+  }
+
+  .l-padded-reverse {
+    margin: 0 -0.5em;
+  }
+
+  .l-padded-reverse-all {
+    margin: -0.5em;
   }
 
   /* miscellaneous helper classes */
