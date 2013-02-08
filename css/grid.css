@@ -75,10 +75,6 @@
   padding: 0.5em;
 }
 
-.padded-reverse {
-  margin: -0.5em;
-}
-
 .padded-left {
   padding-left: 0.5em;
 }
@@ -113,10 +109,16 @@
 
 .padded-reverse {
   margin: 0 -0.5em;
+  width: auto;
+  box-sizing: content-box;
+  float: none;
 }
 
 .padded-reverse-all {
   margin: -0.5em;
+  width: auto;
+  box-sizing: content-box;
+  float: none;
 }
 
 /* miscellaneous helper classes */
@@ -139,6 +141,9 @@
 /* For compatibility with Bootstrap (fixed), Foundation, etc. */
 .row {
   margin: 0 -0.5em;
+  width: auto;
+  box-sizing: content-box;
+  float: none;
 }
 
 @media (max-width: 480px) {
@@ -205,10 +210,6 @@
     padding: 0.5em;
   }
 
-  .s-padded-reverse {
-    margin: -0.5em;
-  }
-
   .s-padded-left {
     padding-left: 0.5em;
   }
@@ -243,10 +244,16 @@
 
   .s-padded-reverse {
     margin: 0 -0.5em;
+    width: auto;
+    box-sizing: content-box;
+    float: none;
   }
 
   .s-padded-reverse-all {
     margin: -0.5em;
+    width: auto;
+    box-sizing: content-box;
+    float: none;
   }
 
   /* miscellaneous helper classes */
@@ -334,10 +341,6 @@
     padding: 0.5em;
   }
 
-  .m-padded-reverse {
-    margin: -0.5em;
-  }
-
   .m-padded-left {
     padding-left: 0.5em;
   }
@@ -372,10 +375,16 @@
 
   .m-padded-reverse {
     margin: 0 -0.5em;
+    width: auto;
+    box-sizing: content-box;
+    float: none;
   }
 
   .m-padded-reverse-all {
     margin: -0.5em;
+    width: auto;
+    box-sizing: content-box;
+    float: none;
   }
 
   /* miscellaneous helper classes */
@@ -463,10 +472,6 @@
     padding: 0.5em;
   }
 
-  .l-padded-reverse {
-    margin: -0.5em;
-  }
-
   .l-padded-left {
     padding-left: 0.5em;
   }
@@ -501,10 +506,16 @@
 
   .l-padded-reverse {
     margin: 0 -0.5em;
+    width: auto;
+    box-sizing: content-box;
+    float: none;
   }
 
   .l-padded-reverse-all {
     margin: -0.5em;
+    width: auto;
+    box-sizing: content-box;
+    float: none;
   }
 
   /* miscellaneous helper classes */

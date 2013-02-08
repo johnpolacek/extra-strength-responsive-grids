@@ -19,6 +19,12 @@ $padInner: 1em;
 $breakpoints: 0, 480px, 800px;
 $breakpoint_prefixes: s-,m-,l-;
 
+@mixin reverseBoxSizing() {
+  width: auto;
+  box-sizing: content-box;
+  float: none;
+}
+
 @mixin gridClasses($_prefix:'',$breakpoint_min:'',$breakpoint_max:''){
   .#{$_prefix}grid-all {
     margin: 0; clear: none; float: left; 
@@ -64,7 +70,6 @@ $breakpoint_prefixes: s-,m-,l-;
 
   /* padding helper classes */
   .#{$_prefix}padded { padding: $padOuter; }
-  .#{$_prefix}padded-reverse { margin: -$padOuter; }
   .#{$_prefix}padded-left { padding-left: $padOuter; }
   .#{$_prefix}padded-right { padding-right: $padOuter; }
   .#{$_prefix}padded-top { padding-top: $padOuter; }
@@ -75,8 +80,14 @@ $breakpoint_prefixes: s-,m-,l-;
   .#{$_prefix}padded-inner { padding: $padInner; }
   .#{$_prefix}padded-inner-sides { padding: 0 $padInner; }
 
-  .#{$_prefix}padded-reverse { margin: 0 (-$padOuter); }
-  .#{$_prefix}padded-reverse-all { margin: -$padOuter; }
+  .#{$_prefix}padded-reverse { 
+    margin: 0 (-$padOuter); 
+    @include reverseBoxSizing();
+  }
+  .#{$_prefix}padded-reverse-all { 
+    margin: -$padOuter; 
+    @include reverseBoxSizing();
+  }
 
   /* miscellaneous helper classes */
   .#{$_prefix}flow-opposite { float: right; }
@@ -85,7 +96,6 @@ $breakpoint_prefixes: s-,m-,l-;
   .#{$_prefix}left { text-align:left; }
   .#{$_prefix}right { text-align:right; }
   
-
   @if ($_prefix != '') {
 
     //* Only generate for prefixed */
@@ -97,10 +107,14 @@ $breakpoint_prefixes: s-,m-,l-;
     //* Only generate on top level */
     
     /* For compatibility with Bootstrap (fixed), Foundation, etc. */
-    .row { margin: 0 (-$padOuter); }
+    .row { 
+      margin: 0 (-$padOuter); 
+      @include reverseBoxSizing();
+    }
 
   }
 }
+
 
 //* generate top-level grid classes */
 @include gridClasses();
