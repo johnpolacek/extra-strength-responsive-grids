@@ -1,171 +1,43 @@
-/* 
-  Extra Strength Responsive Grids
-  Author & copyright (c) 2013: John Polacek 
-  Follow me on Twitter: @johnpolacek
+//  Extra Strength Responsive Grids
+//  Author & copyright (c) 2013: John Polacek 
+//  Follow me on Twitter: @johnpolacek
+//  With contributions from Tim Svensen, @tsvensen
 
-  Dual MIT & GPL license
+//  Dual MIT & GPL license
 
-  Project Page: http://dfcb.github.com/extra-strength-responsive-grids
-  Project Repo: https://github.com/dfcb/extra-strength-responsive-grids
+//  Project Page: http://dfcb.github.com/extra-strength-responsive-grids
+//  Project Repo: https://github.com/dfcb/extra-strength-responsive-grids
   
-  Note: box-sizing: border-box; is required for this solution. 
-  For more info, see the project page
-
-  See examples-grid.scss for usage.
-*/
+//  Note: box-sizing: border-box; is required for this solution. 
+//  For more info, see the project page
 
 
-//* helper mixin */
-@mixin reverseBoxSizing() {
-  width: auto;
-  box-sizing: content-box;
-  float: none;
-}
+@import 'grid.scss';
 
-//* helper mixin */
-@mixin gridClasses($_prefix:'', $gridColumns:12, $padOuter:.5em, $padInner:1em, $breakpoint_min:'', $breakpoint_max:''){
-  .#{$_prefix}grid-all {
-    margin: 0; clear: none; float: left; 
-    -moz-box-sizing: border-box; -webkit-box-sizing: border-box; box-sizing: border-box;  *behavior: url(boxsizing.htc);    
-  }
-  @for $i from 1 through $gridColumns {
-    .#{$_prefix}grid-#{$i} {
-      @extend .#{$_prefix}grid-all;
-      width:percentage($i/$gridColumns);
-    }
-    //* generate easy-to-read grid classes */
-    @if $i/$gridColumns == 1/4 {
-      .#{$_prefix}grid-quarter {
-        @extend .#{$_prefix}grid-#{$i};
-      }
-    }
-    @if $i/$gridColumns == 1/3 {
-      .#{$_prefix}grid-third {
-        @extend .#{$_prefix}grid-#{$i};
-      }
-    }
-    @if $i/$gridColumns == 1/2 {
-      .#{$_prefix}grid-half {
-        @extend .#{$_prefix}grid-#{$i};
-      }
-    }
-    @if $i/$gridColumns == 2/3 {
-      .#{$_prefix}grid-two-thirds {
-        @extend .#{$_prefix}grid-#{$i};
-      }
-    }
-    @if $i/$gridColumns == 3/4 {
-      .#{$_prefix}grid-three-quarters {
-        @extend .#{$_prefix}grid-#{$i};
-      }
-    }
-    @if $i/$gridColumns == 1 {
-      .#{$_prefix}grid-whole {
-        @extend .#{$_prefix}grid-#{$i};
-      }
-    }
-  }
-
-  /* padding helper classes */
-  .#{$_prefix}padded { padding: $padOuter; }
-  .#{$_prefix}padded-left { padding-left: $padOuter; }
-  .#{$_prefix}padded-right { padding-right: $padOuter; }
-  .#{$_prefix}padded-top { padding-top: $padOuter; }
-  .#{$_prefix}padded-bottom { padding-bottom: $padOuter; }
-  .#{$_prefix}padded-sides { padding: 0 $padOuter; }
-  .#{$_prefix}padded-vertical { padding: $padOuter 0; }
-
-  .#{$_prefix}padded-inner { padding: $padInner; }
-  .#{$_prefix}padded-inner-sides { padding: 0 $padInner; }
-
-  .#{$_prefix}padded-reverse { 
-    margin: 0 (-$padOuter); 
-    @include reverseBoxSizing();
-  }
-  .#{$_prefix}padded-reverse-all { 
-    margin: -$padOuter; 
-    @include reverseBoxSizing();
-  }
-
-  /* miscellaneous helper classes */
-  .#{$_prefix}flow-opposite { float: right; }
-
-  .#{$_prefix}center { text-align:center; }
-  .#{$_prefix}left { text-align:left; }
-  .#{$_prefix}right { text-align:right; }
-  
-  @if ($_prefix != '') {
-
-    //* Only generate for prefixed */
-
-    .#{$_prefix}hidden { display: none; }
-  
-  } @else {
-
-    //* Only generate on top level */
-    
-    /* For compatibility with Bootstrap (fixed), Foundation, etc. */
-    .row { 
-      margin: 0 (-$padOuter); 
-      @include reverseBoxSizing();
-    }
-
-  }
-}
+// Default settings
+//   (0, 480px, 800px), // breakpoints
+//   'px',              // breakpoint type px or em 
+//   12,                // number of grid columns 
+//   .5em,              // outer padding 
+//   1em,               // inner padding 
+//   (s-,m-,l-)         // breakpoint prefixes
 
 
-//* generate grid classes for each breakpoint, defaults defined below */
-@mixin gridGenerator(
-         $breakpoints: (0, 480px, 800px), // breakpoints
-         $breakpointType: 'px',           // breakpoint type px or em 
-         $gridColumns: 12,                // number of grid columns 
-         $padOuter: 1em,                  // outer padding 
-         $padInner: .5em,                 // inner padding 
-         $breakpointPrefixes: (s-,m-,l-)  // breakpoint prefixes
-       ) {
+// Call the grid generator using the defaults
+@include gridGenerator();
 
-  //* generate top-level grid classes, no prefix */
-  @include gridClasses('', $gridColumns, $padInner, $padOuter);
+// Optionally call grid generator with em units
+// @include gridGenerator(
+//   (0, 35em, 55em),   // breakpoints
+//   'em',              // breakpoint type 'px' or 'em'
+// );
 
-
-  @for $i from 1 through length($breakpointPrefixes) {
-    $prefix: nth($breakpointPrefixes, $i);
-    $breakpoint_min: nth($breakpoints, $i);
-
-    // Add one to support pixel breakpoints, EMs don't need the extra bump
-    @if $breakpointType == 'px' {
-      $breakpoint_min: nth($breakpoints, $i) + 1;
-    }
-
-    $breakpoint_max: '';
-
-    @if $i < length($breakpointPrefixes) {
-      $breakpoint_max: nth($breakpoints, $i+1);
-    }
-
-  //   //* smallest breakpoint */
-    @if $breakpoint_min == 1 {
-
-      @media (max-width: $breakpoint_max) {
-        @include gridClasses($prefix, $gridColumns, $padInner, $padOuter);
-      }
-          
-    } @else {
-
-      //* middle breakpoints */
-      @if $breakpoint_max != '' {
-
-        @media (min-width: $breakpoint_min) and (max-width: $breakpoint_max) {
-          @include gridClasses($prefix, $gridColumns, $padInner, $padOuter);
-        }
-
-      //* largest breakpoint */
-      } @else {
-
-        @media (min-width: $breakpoint_min) {
-          @include gridClasses($prefix, $gridColumns, $padInner, $padOuter);
-        }
-      }
-    }
-  }
-}
+// Optionally call grid generator, overwritting all the defaults
+// @include gridGenerator(
+//   (0, 35em, 55em),   // breakpoints
+//   'em',              // breakpoint type 'px' or 'em'
+//   18,                // number of grid columns
+//   1em,               // outer padding
+//   1.5em,             // inner padding
+//   (sm-,med-,lg-)     // breakpoint prefixes
+// );
