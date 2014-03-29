@@ -13,7 +13,7 @@ input[type=reset],input[type=submit]{-webkit-appearance:button;cursor:pointer;ov
 body { font-family: 'PT Sans', sans-serif; }
 h1,h2,h3,h4,h5,h6 { line-height: 1.2; margin: 0; }
 h1 {
-	font-family: 'Alfa Slab One', cursive;
+	font-family: 'Alfa Slab One';
 	font-weight: normal;
 	letter-spacing: 1px;
 }
@@ -105,16 +105,18 @@ a, a:visited {
 	color:#4e7cc5;
 	font-size:2em;
 	font-style: normal;
-	font-family: 'Alfa Slab One', cursive;
+	font-family: 'Alfa Slab One';
 	padding:6px 24px;
 	text-decoration:none;
 	text-shadow:0 1px 0 #ffffff;
-}.btn-big:hover {
+}
+.btn-big:hover {
 	background:-webkit-gradient( linear, left top, left bottom, color-stop(0.05, #c4d8f6), color-stop(1, #d9e8ff) );
 	background:-moz-linear-gradient( center top, #c4d8f6 5%, #d9e8ff 100% );
 	filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#c4d8f6', endColorstr='#d9e8ff');
 	background-color:#c4d8f6;
-}.btn-big:active {
+}
+.btn-big:active {
 	position:relative;
 	top:1px;
 }

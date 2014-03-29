@@ -120,13 +120,13 @@
          $breakpoints: (0, 480px, 800px), // breakpoints
          $breakpointType: 'px',           // breakpoint type px or em 
          $gridColumns: 12,                // number of grid columns 
-         $padOuter: 1em,                  // outer padding 
-         $padInner: .5em,                 // inner padding 
+         $padOuter: .5em,                 // outer padding 
+         $padInner: 1em,                  // inner padding 
          $breakpointPrefixes: (s-,m-,l-)  // breakpoint prefixes
        ) {
 
   //* generate top-level grid classes, no prefix */
-  @include gridClasses('', $gridColumns, $padInner, $padOuter);
+  @include gridClasses('', $gridColumns, $padOuter, $padInner);
 
 
   @for $i from 1 through length($breakpointPrefixes) {
@@ -148,7 +148,7 @@
     @if $breakpoint_min == 1 {
 
       @media (max-width: $breakpoint_max) {
-        @include gridClasses($prefix, $gridColumns, $padInner, $padOuter);
+        @include gridClasses($prefix, $gridColumns, $padOuter, $padInner);
       }
           
     } @else {
@@ -157,14 +157,14 @@
       @if $breakpoint_max != '' {
 
         @media (min-width: $breakpoint_min) and (max-width: $breakpoint_max) {
-          @include gridClasses($prefix, $gridColumns, $padInner, $padOuter);
+          @include gridClasses($prefix, $gridColumns, $padOuter, $padInner);
         }
 
       //* largest breakpoint */
       } @else {
 
         @media (min-width: $breakpoint_min) {
-          @include gridClasses($prefix, $gridColumns, $padInner, $padOuter);
+          @include gridClasses($prefix, $gridColumns, $padOuter, $padInner);
         }
       }
     }
