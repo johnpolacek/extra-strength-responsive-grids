@@ -129,7 +129,16 @@
          $gridColumns: 12,                // number of grid columns 
          $padOuter: .5em,                 // outer padding 
          $padInner: 1em,                  // inner padding 
-         $breakpointPrefixes: (s-,m-,l-)  // breakpoint prefixes
+         $breakpointPrefixes: (s-,m-,l-), // breakpoint prefixes
+         $isProgressivelyEnhanced: false  // progressively add styling instead of exclusion
+                                          //   Allows for the following to both achieve the same results
+                                          //     Progressive
+                                          //       @media (min-width: $breakpoint_min) {
+                                          //       <div class="grid-half">
+                                          //
+                                          //     Exclusive
+                                          //       @media (min-width: $breakpoint_min) and (max-width: $breakpoint_max) {
+                                          //       <div class="grid-half s-grid-half m-grid-half l-grid-half">
        ) {
 
   //* generate top-level grid classes, no prefix */
@@ -151,20 +160,26 @@
       $breakpoint_max: nth($breakpoints, $i+1);
     }
 
-  //   //* smallest breakpoint */
+    //* smallest breakpoint */
     @if $breakpoint_min == 1 {
 
       @media (max-width: $breakpoint_max) {
         @include gridClasses($prefix, $gridColumns, $padOuter, $padInner);
       }
-          
+
     } @else {
 
       //* middle breakpoints */
       @if $breakpoint_max != '' {
 
-        @media (min-width: $breakpoint_min) and (max-width: $breakpoint_max) {
-          @include gridClasses($prefix, $gridColumns, $padOuter, $padInner);
+        @if $isProgressivelyEnhanced {
+          @media (min-width: $breakpoint_min) {
+            @include gridClasses($prefix, $gridColumns, $padOuter, $padInner);
+          }
+        } @else {
+          @media (min-width: $breakpoint_min) and (max-width: $breakpoint_max) {
+            @include gridClasses($prefix, $gridColumns, $padOuter, $padInner);
+          }
         }
 
       //* largest breakpoint */
