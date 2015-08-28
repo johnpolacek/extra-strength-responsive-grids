@@ -121,6 +121,11 @@ a, a:visited {
 .content-box-cta {background: #a82121;color: #fff; }
 .content-box-cta a, .content-box-cta a:visited {color: #fff;font-weight: bold; }
 .content-box-cta p { margin: 0 0 1em; }
+.content-box-new { 
+	background: #ffc156;
+	border-radius: .25em;
+	border: solid 4px #faae29;
+}
 
 .warning { font-style: italic; }
 
