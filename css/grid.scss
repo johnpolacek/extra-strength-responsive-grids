@@ -20,17 +20,22 @@
 //   12,                // number of grid columns 
 //   .5em,              // outer padding 
 //   1em,               // inner padding 
-//   (s-,m-,l-)         // breakpoint prefixes
+//   (s-,m-,l-),        // breakpoint prefixes
+//   false              // progressively add styling instead of exclusion
+                        // See documentation below for more details
+                        // Highly recommend setting this to true
 
 
 // Call the grid generator using the defaults
 @include gridGenerator();
+
 
 // Optionally call grid generator with em units
 // @include gridGenerator(
 //   (0, 35em, 55em),   // breakpoints
 //   'em',              // breakpoint type 'px' or 'em'
 // );
+
 
 // Optionally call grid generator, overwritting all the defaults
 // @include gridGenerator(
@@ -41,3 +46,30 @@
 //   1.5em,             // inner padding
 //   (sm-,med-,lg-)     // breakpoint prefixes
 // );
+
+
+// Optional, but recommended to call the grid generator with the
+// progressively enhanced flag to cut down on the number of classes in HTML
+// See the documentation below.
+//  @mixin gridGenerator(
+//   (0, 35em, 55em),   // breakpoints
+//   'em',              // breakpoint type 'px' or 'em'
+//   12,                // number of grid columns
+//   .5em,              // outer padding
+//   1em,               // inner padding
+//   (s-,m-,l-),        // breakpoint prefixes
+//   true               // progressively add styling instead of exclusion
+                        //   Allows for the following to both achieve the same results
+                        //     Progressive
+                        //       @media (min-width: $breakpoint_min) {
+                        //       Allows for one class when the element is always half
+                        //       <div class="grid-half">
+                        //       Otherwise, only add other classes as needed
+                        //       Here the element is half until it hits the large breakpoint
+                        //       <div class="grid-half l-grid-third">
+                        //
+                        //     Exclusive
+                        //       @media (min-width: $breakpoint_min) and (max-width: $breakpoint_max) {
+                        //       Forces the use of identifying classes for every breakpoint
+                        //       <div class="grid-half s-grid-half m-grid-half l-grid-half">
+//);
